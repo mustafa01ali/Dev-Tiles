@@ -4,4 +4,5 @@
   <string name="permission_required_toast">Need to grant permission. Please run:\n\n
     adb shell pm grant xyz.mustafaali.devtiles
     android.permission.WRITE_SECURE_SETTINGS</string>
+  <string name="home_message">Quick Settings tiles for developers</string>
 </resources>
