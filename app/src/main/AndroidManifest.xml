@@ -19,7 +19,7 @@
     </activity>
 
     <service
-        android:name=".usbdebugging.ToggleUsbDebuggingService"
+        android:name=".service.ToggleUsbDebuggingService"
         android:enabled="true"
         android:exported="true"
         android:icon="@drawable/ic_toggle_usb_debugging"
