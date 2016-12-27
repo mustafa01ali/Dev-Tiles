@@ -1,6 +1,7 @@
 <resources>
   <string name="app_name">Dev Tiles</string>
   <string name="label_toggle_usb_debugging">USB Debugging</string>
+  <string name="label_keep_screen_on">Keep screen on when plugged in</string>
   <string name="permission_required_toast">Need to grant permission. Please run:\n\n
     adb shell pm grant xyz.mustafaali.devtiles
     android.permission.WRITE_SECURE_SETTINGS</string>
