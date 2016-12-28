@@ -31,17 +31,28 @@
     </service>
 
     <service
-        android:name=".service.ToggleShowTapsService"
+        android:name=".service.ToggleKeepScreenOnService"
         android:enabled="true"
         android:exported="true"
-        android:icon="@drawable/ic_toggle_usb_debugging"
-        android:label="@string/label_toggle_show_touches"
+        android:icon="@drawable/ic_toggle_keep_screen_on"
+        android:label="@string/label_keep_screen_on"
         android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
       <intent-filter>
         <action android:name="android.service.quicksettings.action.QS_TILE"/>
       </intent-filter>
     </service>
 
+      <service
+          android:name=".service.ToggleShowTapsService"
+          android:enabled="true"
+          android:exported="true"
+          android:icon="@drawable/ic_toggle_usb_debugging"
+          android:label="@string/label_toggle_show_touches"
+          android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+          <intent-filter>
+              <action android:name="android.service.quicksettings.action.QS_TILE"/>
+          </intent-filter>
+      </service>
   </application>
 
 </manifest>
