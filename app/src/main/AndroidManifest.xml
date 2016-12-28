@@ -19,11 +19,23 @@
     </activity>
 
     <service
-        android:name=".usbdebugging.ToggleUsbDebuggingService"
+        android:name=".service.ToggleUsbDebuggingService"
         android:enabled="true"
         android:exported="true"
         android:icon="@drawable/ic_toggle_usb_debugging"
         android:label="@string/label_toggle_usb_debugging"
+        android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+      <intent-filter>
+        <action android:name="android.service.quicksettings.action.QS_TILE"/>
+      </intent-filter>
+    </service>
+
+    <service
+        android:name=".service.ToggleKeepScreenOnService"
+        android:enabled="true"
+        android:exported="true"
+        android:icon="@drawable/ic_toggle_keep_screen_on"
+        android:label="@string/label_keep_screen_on"
         android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
       <intent-filter>
         <action android:name="android.service.quicksettings.action.QS_TILE"/>
