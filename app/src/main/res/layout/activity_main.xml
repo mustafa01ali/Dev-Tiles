@@ -34,9 +34,17 @@
         android:text="@string/btn_label_copy" />
 
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:text="@string/features_title"
+        android:textAppearance="@android:style/TextAppearance.Material.Large" />
+
+    <TextView
         android:id="@+id/tv_features_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:text="@string/features_description" />
+        android:textAppearance="@android:style/TextAppearance.Material.Body1"/>
+
 </LinearLayout>

@@ -13,9 +13,14 @@
     <string name="permission_command">adb shell pm grant xyz.mustafaali.devtiles android.permission.WRITE_SECURE_SETTINGS</string>
     <string name="btn_label_copy">Copy</string>
 
+    <string name="features_title">Available Tiles</string>
+
     <string name="features_description">
         <![CDATA[
-        <h2>Supported Tiles:</h2>
+        <b>Toggle USB Debugging</b> <br />
+        Enable/disable USB debugging right from your notification drawer <br /><br />
+        <b>Toggle Keep Screen On</b> <br />
+        Keeps screen on when connected via USB, but turns it off if connected to a wall charger.
         ]]>
     </string>
     <string name="msg_copied">Copied</string>
