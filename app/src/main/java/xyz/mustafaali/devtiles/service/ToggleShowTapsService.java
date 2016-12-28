@@ -7,7 +7,7 @@ import android.widget.Toast;
 
 import xyz.mustafaali.devtiles.R;
 
-public class ToggleShowTouchesService extends BaseTileService {
+public class ToggleShowTapsService extends BaseTileService {
     private final String TAG = this.getClass().getSimpleName();
 
     @Override
@@ -15,7 +15,7 @@ public class ToggleShowTouchesService extends BaseTileService {
         String newValue = isUsbDebuggingEnabled() ? "0" : "1";
 
         try {
-            Settings.Global.putString(getContentResolver(), Settings.Global.ADB_ENABLED, newValue);
+            Settings.Global.putString(getContentResolver(), Settings.System.SHOW_TOUCHES, newValue);
         } catch (SecurityException se) {
             String message = getString(R.string.permission_required_toast);
             Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
