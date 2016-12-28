@@ -1,7 +1,6 @@
 package xyz.mustafaali.devtiles.service;
 
 import android.provider.Settings;
-import android.service.quicksettings.Tile;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -9,13 +8,14 @@ import xyz.mustafaali.devtiles.R;
 
 public class ToggleShowTapsService extends BaseTileService {
     private final String TAG = this.getClass().getSimpleName();
+    private final String SHOW_TOUCHES = "show_touches";
 
     @Override
     public void onClick() {
-        String newValue = isUsbDebuggingEnabled() ? "0" : "1";
+        int newValue = isFeatureEnabled() ? 0 : 1;
 
         try {
-            Settings.Global.putString(getContentResolver(), Settings.System.SHOW_TOUCHES, newValue);
+            Settings.System.putInt(contentResolver, SHOW_TOUCHES, newValue);
         } catch (SecurityException se) {
             String message = getString(R.string.permission_required_toast);
             Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
@@ -25,20 +25,13 @@ public class ToggleShowTapsService extends BaseTileService {
         updateTile();
     }
 
-    private boolean isUsbDebuggingEnabled() {
-        return Settings.Global.getString(getContentResolver(), Settings.Global.ADB_ENABLED).equals("1");
-    }
-
     @Override
-    protected void updateTile() {
-        final Tile tile = getQsTile();
-
-        if (isUsbDebuggingEnabled()) {
-            tile.setState(Tile.STATE_ACTIVE);
-        } else {
-            tile.setState(Tile.STATE_INACTIVE);
+    protected boolean isFeatureEnabled() {
+        try {
+            return Settings.System.getInt(contentResolver, SHOW_TOUCHES) == 1;
+        } catch (Settings.SettingNotFoundException e) {
+            e.printStackTrace();
+            return false;
         }
-
-        tile.updateTile();
     }
 }
