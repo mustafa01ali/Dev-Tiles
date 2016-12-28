@@ -6,36 +6,32 @@ import android.widget.Toast;
 
 import xyz.mustafaali.devtiles.R;
 
-/**
- * Tile Service to toggle USB Debugging.
- */
-public class ToggleUsbDebuggingService extends BaseTileService {
-
+public class ToggleShowTapsService extends BaseTileService {
     private final String TAG = this.getClass().getSimpleName();
-
-    @Override
-    public void onStartListening() {
-        super.onStartListening();
-        updateTile();
-    }
+    private final String SHOW_TOUCHES = "show_touches";
 
     @Override
     public void onClick() {
-        String newValue = isFeatureEnabled() ? "0" : "1";
+        int newValue = isFeatureEnabled() ? 0 : 1;
 
         try {
-            Settings.Global.putString(contentResolver, Settings.Global.ADB_ENABLED, newValue);
+            Settings.System.putInt(contentResolver, SHOW_TOUCHES, newValue);
         } catch (SecurityException se) {
             String message = getString(R.string.permission_required_toast);
             Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
             Log.e(TAG, message);
         }
+
         updateTile();
     }
 
     @Override
     protected boolean isFeatureEnabled() {
-        return Settings.Global.getString(contentResolver, Settings.Global.ADB_ENABLED).equals("1");
+        try {
+            return Settings.System.getInt(contentResolver, SHOW_TOUCHES) == 1;
+        } catch (Settings.SettingNotFoundException e) {
+            e.printStackTrace();
+            return false;
+        }
     }
-
 }
