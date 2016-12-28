@@ -1,9 +1,23 @@
 <resources>
-  <string name="app_name">Dev Tiles</string>
-  <string name="label_toggle_usb_debugging">USB Debugging</string>
-  <string name="label_keep_screen_on">Keep screen on when plugged in</string>
-  <string name="permission_required_toast">Need to grant permission. Please run:\n\n
+    <string name="app_name">Dev Tiles</string>
+
+    <!-- Tile labels -->
+    <string name="label_toggle_usb_debugging">USB Debugging</string>
+    <string name="label_keep_screen_on">Keep screen on when plugged in</string>
+
+    <string name="permission_required_toast">Need to grant permission. Please run:\n\n
     adb shell pm grant xyz.mustafaali.devtiles
     android.permission.WRITE_SECURE_SETTINGS</string>
-  <string name="home_message">Quick Settings tiles for developers</string>
+
+    <string name="grant_permission">Grant Permission</string>
+    <string name="permission_command">adb shell pm grant xyz.mustafaali.devtiles android.permission.WRITE_SECURE_SETTINGS</string>
+    <string name="btn_label_copy">Copy</string>
+
+    <string name="features_description">
+        <![CDATA[
+        <h2>Supported Tiles:</h2>
+        ]]>
+    </string>
+    <string name="msg_copied">Copied</string>
+    <string name="copy_label">Command</string>
 </resources>
