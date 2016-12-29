@@ -3,6 +3,7 @@
     package="xyz.mustafaali.devtiles">
 
     <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+    <uses-permission android:name="android.permission.DUMP" />
 
     <application
         android:allowBackup="true"

@@ -1,7 +1,6 @@
 package xyz.mustafaali.devtiles.service;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.provider.Settings;
 
 /**
@@ -9,11 +8,9 @@ import android.provider.Settings;
  */
 public class ToggleDemoModeService extends BaseTileService {
 
-    //FIXME
-    private static final String DEVICE_DEMO_MODE = "sysui_tuner_demo_on";
-    private static final String DEMO_MODE_ON = "sysui_tuner_demo_on";
+    private final String DEMO_MODE_ON = "sysui_tuner_demo_on";
 
-    private static final String[] STATUS_ICONS = {
+    private final String[] STATUS_ICONS = {
             "volume",
             "bluetooth",
             "location",
@@ -27,49 +24,37 @@ public class ToggleDemoModeService extends BaseTileService {
             "managed_profile",
     };
 
-    public interface DemoMode {
-        public static final String DEMO_MODE_ALLOWED = "sysui_demo_allowed";
+    private interface DemoMode {
+//        void dispatchDemoCommand(String command, Bundle args);
 
-        void dispatchDemoCommand(String command, Bundle args);
+        String ACTION_DEMO = "com.android.systemui.demo";
 
-        public static final String ACTION_DEMO = "com.android.systemui.demo";
-
-        public static final String EXTRA_COMMAND = "command";
-        public static final String COMMAND_ENTER = "enter";
-        public static final String COMMAND_EXIT = "exit";
-        public static final String COMMAND_CLOCK = "clock";
-        public static final String COMMAND_BATTERY = "battery";
-        public static final String COMMAND_NETWORK = "network";
-        public static final String COMMAND_BARS = "bars";
-        public static final String COMMAND_STATUS = "status";
-        public static final String COMMAND_NOTIFICATIONS = "notifications";
-        public static final String COMMAND_VOLUME = "volume";
+        String EXTRA_COMMAND = "command";
+        String COMMAND_ENTER = "enter";
+        String COMMAND_EXIT = "exit";
+        String COMMAND_CLOCK = "clock";
+        String COMMAND_BATTERY = "battery";
+        String COMMAND_NETWORK = "network";
+        String COMMAND_BARS = "bars";
+        String COMMAND_STATUS = "status";
+        String COMMAND_NOTIFICATIONS = "notifications";
+        String COMMAND_VOLUME = "volume";
 
     }
 
     @Override
     public void onClick() {
-        int newValue;
         if (isFeatureEnabled()) {
             stopDemoMode();
-            newValue = 0;
         } else {
             startDemoMode();
-            newValue = 1;
         }
-
-//        int newValue = isFeatureEnabled() ? 0 : 1;
-//        try {
-//            Settings.Global.putInt(contentResolver, DEVICE_DEMO_MODE, newValue);
-//        } catch (SecurityException se) {
-//            showPermissionError();
-//        }
         updateTile();
     }
 
     @Override
     protected boolean isFeatureEnabled() {
-        return Settings.Global.getInt(contentResolver, DEVICE_DEMO_MODE, 0) != 0;
+        return Settings.Global.getInt(contentResolver, DEMO_MODE_ON, 0) != 0;
     }
 
     private void startDemoMode() {
@@ -121,6 +106,10 @@ public class ToggleDemoModeService extends BaseTileService {
     }
 
     private void setGlobal(String key, int value) {
-        Settings.Global.putInt(contentResolver, key, value);
+        try {
+            Settings.Global.putInt(contentResolver, key, value);
+        } catch (SecurityException se) {
+            showPermissionError();
+        }
     }
 }
