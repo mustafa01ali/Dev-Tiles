@@ -53,6 +53,18 @@
                 <action android:name="android.service.quicksettings.action.QS_TILE" />
             </intent-filter>
         </service>
+
+        <service
+            android:name=".service.ToggleDemoModeService"
+            android:enabled="true"
+            android:exported="true"
+            android:icon="@drawable/ic_toggle_show_taps"
+            android:label="@string/label_toggle_demo_mode"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>
