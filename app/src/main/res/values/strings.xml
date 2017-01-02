@@ -12,8 +12,9 @@
     android.permission.WRITE_SECURE_SETTINGS</string>
 
     <!-- Home screen -->
-    <string name="grant_permission">Grant Permission</string>
-    <string name="permission_command">adb shell pm grant xyz.mustafaali.devtiles android.permission.WRITE_SECURE_SETTINGS</string>
+    <string name="grant_permission">Grant Permissions</string>
+    <string name="permission_command">adb shell pm grant xyz.mustafaali.devtiles android.permission.WRITE_SECURE_SETTINGS\n\nadb shell pm grant xyz.mustafaali.devtiles android.permission.DUMP
+    </string>
     <string name="btn_label_copy">Copy</string>
 
     <string name="features_title">Available Tiles</string>
@@ -25,7 +26,9 @@
         <b>Toggle Keep Screen On</b> <br />
         Keep screen on when connected via USB, but turn it off if connected to a wall charger  <br /><br />
         <b>Show touches</b> <br />
-        Because others can\'t see where you are tapping during demos
+        Because others can\'t see where you are tapping during demos <br /><br />
+        <b>Toggle Demo Mode</b> <br />
+        No more status bar clutter during demos or in screenshots
         ]]>
     </string>
     <string name="msg_copied">Copied</string>
