@@ -59,7 +59,7 @@
             android:name=".service.ToggleDemoModeService"
             android:enabled="true"
             android:exported="true"
-            android:icon="@drawable/ic_toggle_show_taps"
+            android:icon="@drawable/ic_toggle_demo_mode"
             android:label="@string/label_toggle_demo_mode"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter>
