@@ -42,12 +42,8 @@ public class ToggleDemoModeService extends BaseTileService {
     @Override
     public void onStartListening() {
         super.onStartListening();
-        try {
-            if (Settings.Global.getInt(contentResolver, DEMO_MODE_ALLOWED) != 0) {
-                setGlobal(DEMO_MODE_ALLOWED, 1);
-            }
-        } catch (Settings.SettingNotFoundException e) {
-            e.printStackTrace();
+        if (Settings.Global.getInt(contentResolver, DEMO_MODE_ALLOWED, 0) == 0) {
+            setGlobal(DEMO_MODE_ALLOWED, 1);
         }
     }
 
