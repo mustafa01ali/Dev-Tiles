@@ -8,6 +8,7 @@ import android.provider.Settings;
  */
 public class ToggleDemoModeService extends BaseTileService {
 
+    private final String DEMO_MODE_ALLOWED = "sysui_demo_allowed";
     private final String DEMO_MODE_ON = "sysui_tuner_demo_on";
 
     private final String[] STATUS_ICONS = {
@@ -25,10 +26,7 @@ public class ToggleDemoModeService extends BaseTileService {
     };
 
     private interface DemoMode {
-//        void dispatchDemoCommand(String command, Bundle args);
-
         String ACTION_DEMO = "com.android.systemui.demo";
-
         String EXTRA_COMMAND = "command";
         String COMMAND_ENTER = "enter";
         String COMMAND_EXIT = "exit";
@@ -39,7 +37,18 @@ public class ToggleDemoModeService extends BaseTileService {
         String COMMAND_STATUS = "status";
         String COMMAND_NOTIFICATIONS = "notifications";
         String COMMAND_VOLUME = "volume";
+    }
 
+    @Override
+    public void onStartListening() {
+        super.onStartListening();
+        try {
+            if (Settings.Global.getInt(contentResolver, DEMO_MODE_ALLOWED) != 0) {
+                setGlobal(DEMO_MODE_ALLOWED, 1);
+            }
+        } catch (Settings.SettingNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
