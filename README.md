@@ -4,7 +4,7 @@ Android Quick Settings tiles for developers. Works on Android 7.0+.
 
 ## Usage
 1. Install the app
-2. Grant permissions - `adb shell pm grant xyz.mustafaali.devtiles android.permission.WRITE_SECURE_SETTINGS`, `adb shell pm grant xyz.mustafaali.devtiles android.permission.DUMP`
+2. Grant permissions - `adb shell pm grant xyz.mustafaali.devqstiles android.permission.WRITE_SECURE_SETTINGS`, `adb shell pm grant xyz.mustafaali.devqstiles android.permission.DUMP`
 3. Profit\!
 
 ## Current Features

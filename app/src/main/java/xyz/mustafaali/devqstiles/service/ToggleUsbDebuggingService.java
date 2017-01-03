@@ -1,10 +1,10 @@
-package xyz.mustafaali.devtiles.service;
+package xyz.mustafaali.devqstiles.service;
 
 import android.provider.Settings;
 import android.util.Log;
 import android.widget.Toast;
 
-import xyz.mustafaali.devtiles.R;
+import xyz.mustafaali.devqstiles.R;
 
 /**
  * Tile Service to toggle USB Debugging.

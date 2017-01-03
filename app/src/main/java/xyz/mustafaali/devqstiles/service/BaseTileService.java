@@ -1,4 +1,4 @@
-package xyz.mustafaali.devtiles.service;
+package xyz.mustafaali.devqstiles.service;
 
 import android.content.ContentResolver;
 import android.service.quicksettings.Tile;
@@ -6,7 +6,7 @@ import android.service.quicksettings.TileService;
 import android.util.Log;
 import android.widget.Toast;
 
-import xyz.mustafaali.devtiles.R;
+import xyz.mustafaali.devqstiles.R;
 
 public abstract class BaseTileService extends TileService {
 

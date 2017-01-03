@@ -1,4 +1,4 @@
-package xyz.mustafaali.devtiles.service;
+package xyz.mustafaali.devqstiles.service;
 
 import android.content.Intent;
 import android.provider.Settings;

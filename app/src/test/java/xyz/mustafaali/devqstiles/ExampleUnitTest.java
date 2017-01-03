@@ -1,4 +1,4 @@
-package xyz.mustafaali.devtiles;
+package xyz.mustafaali.devqstiles;
 
 import org.junit.Test;
 
