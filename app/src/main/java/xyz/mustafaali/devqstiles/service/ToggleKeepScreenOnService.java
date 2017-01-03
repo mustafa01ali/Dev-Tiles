@@ -1,4 +1,4 @@
-package xyz.mustafaali.devtiles.service;
+package xyz.mustafaali.devqstiles.service;
 
 import android.os.BatteryManager;
 import android.provider.Settings;
@@ -17,7 +17,7 @@ public class ToggleKeepScreenOnService extends BaseTileService {
         int newValue = isFeatureEnabled() ? 0 : BatteryManager.BATTERY_PLUGGED_USB;
 
         try {
-            Settings.Global.putInt(getContentResolver(), Settings.Global.STAY_ON_WHILE_PLUGGED_IN, newValue);
+            Settings.Global.putInt(contentResolver, Settings.Global.STAY_ON_WHILE_PLUGGED_IN, newValue);
         } catch (SecurityException se) {
             showPermissionError();
         }
@@ -27,7 +27,7 @@ public class ToggleKeepScreenOnService extends BaseTileService {
     @Override
     protected boolean isFeatureEnabled() {
         try {
-            return Settings.Global.getInt(getContentResolver(), Settings.Global.STAY_ON_WHILE_PLUGGED_IN) == BatteryManager.BATTERY_PLUGGED_USB;
+            return Settings.Global.getInt(contentResolver, Settings.Global.STAY_ON_WHILE_PLUGGED_IN) == BatteryManager.BATTERY_PLUGGED_USB;
         } catch (Settings.SettingNotFoundException e) {
             Log.e(TAG, e.getMessage());
         }

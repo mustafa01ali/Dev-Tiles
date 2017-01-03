@@ -1,4 +1,4 @@
-package xyz.mustafaali.devtiles;
+package xyz.mustafaali.devqstiles;
 
 import android.content.ClipData;
 import android.content.ClipboardManager;

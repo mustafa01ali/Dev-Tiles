@@ -4,16 +4,16 @@ Android Quick Settings tiles for developers. Works on Android 7.0+.
 
 ## Usage
 1. Install the app
-2. Grant permission - `adb shell pm grant xyz.mustafaali.devtiles android.permission.WRITE_SECURE_SETTINGS`
+2. Grant permissions - `adb shell pm grant xyz.mustafaali.devqstiles android.permission.WRITE_SECURE_SETTINGS`, `adb shell pm grant xyz.mustafaali.devqstiles android.permission.DUMP`
 3. Profit\!
 
 ## Current Features
 * Toggle USB Debugging
 * Keep screen on when connected to a computer, but let it turn off when connected to a wall charger
+* Toggle show taps
+* Toggle [demo mode](https://android.googlesource.com/platform/frameworks/base/+/android-6.0.0_r1/packages/SystemUI/docs/demo_mode.md)
 
-
-<a href='https://play.google.com/store/apps/details?id=xyz.mustafaali.devtiles&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' width="200"/></a>
-
+<a href='https://play.google.com/store/apps/details?id=xyz.mustafaali.devqstiles&utm_source=github&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' width="200"/></a>
 
 Inspired by Nick Butcher's [Animator Duration Tile](https://github.com/nickbutcher/AnimatorDurationTile)
 

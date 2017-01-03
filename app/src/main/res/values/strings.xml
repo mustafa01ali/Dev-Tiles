@@ -3,14 +3,15 @@
 
     <!-- Tile labels -->
     <string name="label_toggle_usb_debugging">USB Debugging</string>
-    <string name="label_keep_screen_on">Keep screen on when plugged in</string>
+    <string name="label_keep_screen_on">Keep screen on</string>
+    <string name="label_toggle_show_touches">Show taps</string>
+    <string name="label_toggle_demo_mode">Demo mode</string>
 
-    <string name="permission_required_toast">Need to grant permission. Please run:\n\n
-    adb shell pm grant xyz.mustafaali.devtiles
-    android.permission.WRITE_SECURE_SETTINGS</string>
+    <string name="permission_required_toast">Need to grant permission</string>
 
-    <string name="grant_permission">Grant Permission</string>
-    <string name="permission_command">adb shell pm grant xyz.mustafaali.devtiles android.permission.WRITE_SECURE_SETTINGS</string>
+    <!-- Home screen -->
+    <string name="grant_permission">Grant Permissions</string>
+    <string name="permission_command">adb shell pm grant xyz.mustafaali.devqstiles android.permission.WRITE_SECURE_SETTINGS\n\nadb shell pm grant xyz.mustafaali.devqstiles android.permission.DUMP</string>
     <string name="btn_label_copy">Copy</string>
 
     <string name="features_title">Available Tiles</string>
@@ -20,7 +21,11 @@
         <b>Toggle USB Debugging</b> <br />
         Enable/disable USB debugging right from your notification drawer <br /><br />
         <b>Toggle Keep Screen On</b> <br />
-        Keeps screen on when connected via USB, but turns it off if connected to a wall charger.
+        Keep screen on when connected via USB, but turn it off if connected to a wall charger  <br /><br />
+        <b>Show touches</b> <br />
+        Because others can\'t see where you are tapping during demos <br /><br />
+        <b>Toggle Demo Mode</b> <br />
+        No more status bar clutter during demos or in screenshots
         ]]>
     </string>
     <string name="msg_copied">Copied</string>

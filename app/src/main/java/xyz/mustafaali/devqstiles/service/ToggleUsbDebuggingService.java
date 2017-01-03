@@ -1,10 +1,10 @@
-package xyz.mustafaali.devtiles.service;
+package xyz.mustafaali.devqstiles.service;
 
 import android.provider.Settings;
 import android.util.Log;
 import android.widget.Toast;
 
-import xyz.mustafaali.devtiles.R;
+import xyz.mustafaali.devqstiles.R;
 
 /**
  * Tile Service to toggle USB Debugging.
@@ -24,7 +24,7 @@ public class ToggleUsbDebuggingService extends BaseTileService {
         String newValue = isFeatureEnabled() ? "0" : "1";
 
         try {
-            Settings.Global.putString(getContentResolver(), Settings.Global.ADB_ENABLED, newValue);
+            Settings.Global.putString(contentResolver, Settings.Global.ADB_ENABLED, newValue);
         } catch (SecurityException se) {
             String message = getString(R.string.permission_required_toast);
             Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
@@ -35,7 +35,7 @@ public class ToggleUsbDebuggingService extends BaseTileService {
 
     @Override
     protected boolean isFeatureEnabled() {
-        return Settings.Global.getString(getContentResolver(), Settings.Global.ADB_ENABLED).equals("1");
+        return Settings.Global.getString(contentResolver, Settings.Global.ADB_ENABLED).equals("1");
     }
 
 }

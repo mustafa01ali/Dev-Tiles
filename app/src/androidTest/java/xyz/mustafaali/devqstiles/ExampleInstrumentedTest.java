@@ -1,4 +1,4 @@
-package xyz.mustafaali.devtiles;
+package xyz.mustafaali.devqstiles;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
