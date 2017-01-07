@@ -28,7 +28,6 @@
         No more status bar clutter during demos or in screenshots
         ]]>
     </string>
-    <string name="msg_copied">Copied</string>
 
     <string name="menu_share_app">Share App</string>
     <string name="msg_share_app">Check out Dev Tiles on Google Play – https://play.google.com/store/apps/details?id=xyz.mustafaali.devqstiles</string>
