@@ -12,7 +12,7 @@
     <!-- Home screen -->
     <string name="grant_permission">Grant Permissions</string>
     <string name="permission_command">adb shell pm grant xyz.mustafaali.devqstiles android.permission.WRITE_SECURE_SETTINGS\n\nadb shell pm grant xyz.mustafaali.devqstiles android.permission.DUMP</string>
-    <string name="btn_label_copy">Copy</string>
+    <string name="btn_label_share">Share</string>
 
     <string name="features_title">Available Tiles</string>
 
@@ -29,5 +29,7 @@
         ]]>
     </string>
     <string name="msg_copied">Copied</string>
-    <string name="copy_label">Command</string>
+
+    <string name="menu_share_app">Share App</string>
+    <string name="msg_share_app">Check out Dev Tiles on Google Play – https://play.google.com/store/apps/details?id=xyz.mustafaali.devqstiles</string>
 </resources>
