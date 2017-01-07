@@ -1,6 +1,7 @@
 package xyz.mustafaali.devqstiles.service;
 
 import android.content.Intent;
+import android.os.Build;
 import android.provider.Settings;
 
 /**
@@ -69,7 +70,7 @@ public class ToggleDemoModeService extends BaseTileService {
         sendBroadcast(intent);
 
         intent.putExtra(DemoMode.EXTRA_COMMAND, DemoMode.COMMAND_CLOCK);
-        intent.putExtra("hhmm", "0500");
+        intent.putExtra("hhmm", getDeviceVersionForDemoClock());
         sendBroadcast(intent);
 
         intent.putExtra(DemoMode.EXTRA_COMMAND, DemoMode.COMMAND_NETWORK);
@@ -101,6 +102,10 @@ public class ToggleDemoModeService extends BaseTileService {
         sendBroadcast(intent);
 
         setGlobal(DEMO_MODE_ON, 1);
+    }
+
+    private String getDeviceVersionForDemoClock() {
+        return String.format("0%s00", Build.VERSION.RELEASE.substring(0,1));
     }
 
     private void stopDemoMode() {

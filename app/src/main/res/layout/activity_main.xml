@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/activity_vertical_margin"
-            android:text="@string/btn_label_copy" />
+            android:text="@string/btn_label_share" />
 
         <TextView
             android:layout_width="match_parent"
