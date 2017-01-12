@@ -34,7 +34,9 @@
         <b>Show touches</b> <br />
         Because others can\'t see where you are tapping during demos <br /><br />
         <b>Toggle Demo Mode</b> <br />
-        No more status bar clutter during demos or in screenshots
+        No more status bar clutter during demos or in screenshots <br /><br />
+        <b>Toggle Animator Duration</b> <br />
+        Toggle between 1x and 5x animator duration scales
         ]]>
     </string>
 
