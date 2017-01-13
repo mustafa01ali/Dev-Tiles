@@ -18,6 +18,9 @@
 
     <string name="permission_required_toast">Need to grant permission</string>
 
+    <!-- Animator duration picker -->
+    <string name="dialog_animator_duration_title">Animator duration scale</string>
+
     <!-- Home screen -->
     <string name="grant_permission">Grant Permissions</string>
     <string name="permission_command">adb shell pm grant xyz.mustafaali.devqstiles android.permission.WRITE_SECURE_SETTINGS\n\nadb shell pm grant xyz.mustafaali.devqstiles android.permission.DUMP</string>
