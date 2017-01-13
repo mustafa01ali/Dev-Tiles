@@ -51,17 +51,18 @@ public class ToggleAnimatorDurationService extends TileService {
     @Override
     public void onClick() {
         final float current = getAnimatorScale(getContentResolver());
-        showDialog(getDialog(1));
-//        final float target = current == 1f ? 5f : 1f;
-//        AnimatorDurationScaler.setAnimatorScale(this, target);
-//        updateTile();
+        showDialog(getDialog(findIndexOfValue(current)));
     }
 
-    private void updateTile() {
-        final float scale = getAnimatorScale(getContentResolver());
-        final Tile tile = getQsTile();
-        tile.setIcon(Icon.createWithResource(getApplicationContext(), getIcon(scale)));
-        tile.updateTile();
+    private int findIndexOfValue(float value) {
+        if (scales != null) {
+            for (int i = scales.length - 1; i >= 0; i--) {
+                if (scales[i] == value) {
+                    return i;
+                }
+            }
+        }
+        return -1;
     }
 
     private AlertDialog getDialog(int selectedIndex) {
@@ -77,6 +78,13 @@ public class ToggleAnimatorDurationService extends TileService {
                 })
                 .setNegativeButton(android.R.string.cancel, null);
         return builder.create();
+    }
+
+    private void updateTile() {
+        final float scale = getAnimatorScale(getContentResolver());
+        final Tile tile = getQsTile();
+        tile.setIcon(Icon.createWithResource(getApplicationContext(), getIcon(scale)));
+        tile.updateTile();
     }
 }
 
