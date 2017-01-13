@@ -6,8 +6,20 @@
     <string name="label_keep_screen_on">Keep screen on</string>
     <string name="label_toggle_show_touches">Show taps</string>
     <string name="label_toggle_demo_mode">Demo mode</string>
+    <string name="label_toggle_animator_duration_scale">Toggle animator duration scale</string>
+
+    <string name="animation_off">Animation off</string>
+    <string name="animation_scale_0_5x">Animation scale .5x</string>
+    <string name="animation_scale_1x">Animation scale 1x</string>
+    <string name="animation_scale_1_5x">Animation scale 1.5x</string>
+    <string name="animation_scale_2x">Animation scale 2x</string>
+    <string name="animation_scale_5x">Animation scale 5x</string>
+    <string name="animation_scale_10x">Animation scale 10x</string>
 
     <string name="permission_required_toast">Need to grant permission</string>
+
+    <!-- Animator duration picker -->
+    <string name="dialog_animator_duration_title">Animator duration scale</string>
 
     <!-- Home screen -->
     <string name="grant_permission">Grant Permissions</string>
@@ -25,7 +37,9 @@
         <b>Show touches</b> <br />
         Because others can\'t see where you are tapping during demos <br /><br />
         <b>Toggle Demo Mode</b> <br />
-        No more status bar clutter during demos or in screenshots
+        No more status bar clutter during demos or in screenshots <br /><br />
+        <b>Toggle Animator Duration</b> <br />
+        Toggle animator duration scales
         ]]>
     </string>
 
