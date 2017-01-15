@@ -39,9 +39,6 @@ public class ToggleAnimatorDurationService extends TileService {
             "Animation scale 1.5x", "Animation scale 2x", "Animation scale 5x", "Animation scale 10x"};
     private final float[] scales = {0f, 0.5f, 1f, 1.5f, 2f, 5f, 10f};
 
-    public ToggleAnimatorDurationService() {
-    }
-
     @Override
     public void onStartListening() {
         super.onStartListening();
