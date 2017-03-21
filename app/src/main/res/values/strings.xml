@@ -7,6 +7,7 @@
     <string name="label_toggle_show_touches">Show taps</string>
     <string name="label_toggle_demo_mode">Demo mode</string>
     <string name="label_toggle_animator_duration_scale">Toggle animator duration scale</string>
+    <string name="label_toggle_show_layout_bounds">Show layout bounds</string>
 
     <string name="animation_off">Animation off</string>
     <string name="animation_scale_0_5x">Animation scale .5x</string>
@@ -45,4 +46,5 @@
 
     <string name="menu_share_app">Share App</string>
     <string name="msg_share_app">Check out Dev Tiles on Google Play – https://play.google.com/store/apps/details?id=xyz.mustafaali.devqstiles</string>
+    <string name="msg_generic_error">Oops, something went wrong</string>
 </resources>
