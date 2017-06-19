@@ -30,7 +30,7 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/btn_copy"
+            android:id="@+id/copyButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -45,7 +45,7 @@
             android:textAppearance="@android:style/TextAppearance.Material.Large" />
 
         <TextView
-            android:id="@+id/tv_features_description"
+            android:id="@+id/featuresDescriptionTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/activity_vertical_margin"

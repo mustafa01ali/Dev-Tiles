@@ -6,8 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.text.Html
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Button
-import android.widget.TextView
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,20 +22,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == R.id.menu_share_app) {
-            shareApp()
-            return true
-        } else {
-            return super.onOptionsItemSelected(item)
+        when (item.itemId) {
+            R.id.menu_share_app -> {
+                shareApp()
+                return true
+            }
+            else -> return super.onOptionsItemSelected(item)
         }
     }
 
     fun initUi() {
-        val copyButton = findViewById(R.id.btn_copy) as Button
         copyButton.setOnClickListener({ sharePermissionsCommand() })
-
-        val featureDescription = findViewById(R.id.tv_features_description) as TextView
-        featureDescription.text = Html.fromHtml(getString(R.string.features_description), Html.FROM_HTML_MODE_COMPACT)
+        featuresDescriptionTextView.text = Html.fromHtml(getString(R.string.features_description), Html.FROM_HTML_MODE_COMPACT)
     }
 
     private fun shareApp() {
