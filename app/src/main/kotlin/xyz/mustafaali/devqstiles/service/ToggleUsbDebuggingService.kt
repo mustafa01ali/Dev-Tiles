@@ -16,7 +16,7 @@ class ToggleUsbDebuggingService : BaseTileService() {
     }
 
     override fun onClick() {
-        val newValue = if (isFeatureEnabled) "0" else "1"
+        val newValue = if (isFeatureEnabled()) "0" else "1"
 
         try {
             Settings.Global.putString(contentResolver, Settings.Global.ADB_ENABLED, newValue)

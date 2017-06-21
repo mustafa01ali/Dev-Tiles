@@ -13,7 +13,7 @@ class ToggleKeepScreenOnService : BaseTileService() {
     val TAG = javaClass.simpleName
 
     override fun onClick() {
-        val newValue = if (isFeatureEnabled) 0 else BatteryManager.BATTERY_PLUGGED_USB
+        val newValue = if (isFeatureEnabled()) 0 else BatteryManager.BATTERY_PLUGGED_USB
 
         try {
             Settings.Global.putInt(contentResolver, Settings.Global.STAY_ON_WHILE_PLUGGED_IN, newValue)

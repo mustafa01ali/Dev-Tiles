@@ -11,7 +11,7 @@ class ToggleShowTapsService : BaseTileService() {
     val SHOW_TOUCHES = "show_touches"
 
     override fun onClick() {
-        val newValue = if (isFeatureEnabled) 0 else 1
+        val newValue = if (isFeatureEnabled()) 0 else 1
 
         try {
             Settings.System.putInt(contentResolver, SHOW_TOUCHES, newValue)
