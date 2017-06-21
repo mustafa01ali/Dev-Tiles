@@ -37,17 +37,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun shareApp() {
-        val sendIntent = Intent()
-        sendIntent.action = Intent.ACTION_SEND;
-        sendIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.msg_share_app))
-        sendIntent.type = "text/plain"
-        startActivity(sendIntent)
+        share(R.string.msg_share_app)
     }
 
     private fun sharePermissionsCommand() {
+        share(R.string.permission_command)
+    }
+
+    private fun share(resId: Int) {
         val sendIntent = Intent()
         sendIntent.action = Intent.ACTION_SEND
-        sendIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.permission_command))
+        sendIntent.putExtra(Intent.EXTRA_TEXT, getString(resId))
         sendIntent.type = "text/plain"
         startActivity(sendIntent)
     }
