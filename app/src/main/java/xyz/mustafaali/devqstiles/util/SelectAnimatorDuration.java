@@ -39,14 +39,14 @@ public class SelectAnimatorDuration extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.select_scale_dialog);
-        float scale = AnimatorDurationScaler.getAnimatorScale(getContentResolver());
+        float scale = AnimatorDurationScaler.INSTANCE.getAnimatorScale(getContentResolver());
         ((Checkable) findViewById(getScaleItemId(scale))).setChecked(true);
     }
 
     public void scaleClick(View v) {
         uncheckAllChildren((ViewGroup) v.getParent());
         ((CheckedTextView) v).setChecked(true);
-        AnimatorDurationScaler.setAnimatorScale(this, getScale(v.getId()));
+        AnimatorDurationScaler.INSTANCE.setAnimatorScale(this, getScale(v.getId()));
         finishAfterTransition();
     }
 
