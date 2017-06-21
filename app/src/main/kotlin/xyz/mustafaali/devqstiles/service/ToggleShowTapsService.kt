@@ -8,7 +8,7 @@ import xyz.mustafaali.devqstiles.R
 
 class ToggleShowTapsService : BaseTileService() {
     val TAG = this.javaClass.simpleName
-    val SHOW_TOUCHES = "show_touches";
+    val SHOW_TOUCHES = "show_touches"
 
     override fun onClick() {
         val newValue = if (isFeatureEnabled) 0 else 1
@@ -21,7 +21,7 @@ class ToggleShowTapsService : BaseTileService() {
             Log.e(TAG, message)
         }
 
-        updateTile();
+        updateTile()
     }
 
     override fun isFeatureEnabled(): Boolean {
