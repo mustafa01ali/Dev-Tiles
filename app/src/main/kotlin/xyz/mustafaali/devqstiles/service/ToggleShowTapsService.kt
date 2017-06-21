@@ -16,9 +16,8 @@ class ToggleShowTapsService : BaseTileService() {
         try {
             Settings.System.putInt(contentResolver, SHOW_TOUCHES, newValue)
         } catch (se: SecurityException) {
-            val message = getString(R.string.permission_required_toast)
-            Toast.makeText(applicationContext, message, Toast.LENGTH_LONG).show()
-            Log.e(TAG, message)
+            showPermissionError()
+            Log.e(TAG, se.message)
         }
 
         updateTile()

@@ -36,6 +36,5 @@ public abstract class BaseTileService extends TileService {
     protected void showPermissionError() {
         String message = getString(R.string.permission_required_toast);
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
-        Log.e("Dev Tile Service", message);
     }
 }
