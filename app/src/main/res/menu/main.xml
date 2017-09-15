@@ -11,6 +11,10 @@
         android:title="@string/menu_rate_app"
         app:showAsAction="never" />
     <item
+        android:id="@+id/menu_request_feature"
+        android:title="@string/menu_request_feature"
+        app:showAsAction="never"/>
+    <item
         android:id="@+id/menu_oss_licenses"
         android:title="@string/menu_licenses"
         app:showAsAction="never" />

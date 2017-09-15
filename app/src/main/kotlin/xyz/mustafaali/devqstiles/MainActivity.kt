@@ -36,6 +36,10 @@ class MainActivity : AppCompatActivity() {
                 openStoreListing()
                 true
             }
+            R.id.menu_request_feature -> {
+                openEmailClient()
+                true
+            }
             R.id.menu_oss_licenses -> {
                 startActivity(Intent(this, OssLicensesMenuActivity::class.java))
                 true
@@ -45,7 +49,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun openStoreListing() {
-        var intent = Intent(Intent.ACTION_VIEW)
+        val intent = Intent(Intent.ACTION_VIEW)
         intent.data = Uri.parse("market://details?id=xyz.mustafaali.devqstiles")
         try {
             startActivity(intent)
@@ -54,7 +58,15 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun initUi() {
+    private fun openEmailClient() {
+        val intent = Intent(Intent.ACTION_SEND)
+        intent.type = "message/rfc822"
+        intent.putExtra(android.content.Intent.EXTRA_EMAIL, arrayOf("mustafaali.apps@gmail.com"))
+        intent.putExtra(Intent.EXTRA_SUBJECT, "[DevTiles] Feature Request")
+        startActivity(intent)
+    }
+
+    private fun initUi() {
         copyButton.setOnClickListener({ sharePermissionsCommand() })
         featuresDescriptionTextView.text = Html.fromHtml(getString(R.string.features_description), Html.FROM_HTML_MODE_COMPACT)
     }
