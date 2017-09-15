@@ -5,12 +5,16 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.LinearLayoutManager
 import android.text.Html
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import timber.log.Timber
+import xyz.mustafaali.devqstiles.model.Feature
+import xyz.mustafaali.devqstiles.ui.FeaturesAdapter
 
 
 class MainActivity : AppCompatActivity() {
@@ -69,6 +73,13 @@ class MainActivity : AppCompatActivity() {
     private fun initUi() {
         copyButton.setOnClickListener({ sharePermissionsCommand() })
         featuresDescriptionTextView.text = Html.fromHtml(getString(R.string.features_description), Html.FROM_HTML_MODE_COMPACT)
+
+        featuresRecyclerView.layoutManager = LinearLayoutManager(this)
+        featuresRecyclerView.setHasFixedSize(true)
+        featuresRecyclerView.adapter = FeaturesAdapter(listOf(Feature("One", "Desc", 1))) {
+            Toast.makeText(this, "Click", Toast.LENGTH_SHORT).show()
+        }
+
     }
 
     private fun shareApp() {
