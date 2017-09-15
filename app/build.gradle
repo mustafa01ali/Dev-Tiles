@@ -3,6 +3,11 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.google.gms.oss.licenses.plugin'
 
+repositories {
+    mavenCentral()
+    google()
+}
+
 android {
     compileSdkVersion 26
     buildToolsVersion "25.0.3"
@@ -39,10 +44,7 @@ dependencies {
     compile "com.android.support:appcompat-v7:$support_lib_version"
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     compile 'com.google.android.gms:play-services-oss-licenses:11.2.2'
+    compile 'com.jakewharton.timber:timber:4.5.1'
 
     testCompile 'junit:junit:4.12'
-}
-repositories {
-    mavenCentral()
-    google()
 }

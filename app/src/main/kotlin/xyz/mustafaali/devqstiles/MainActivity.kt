@@ -1,9 +1,12 @@
 package xyz.mustafaali.devqstiles;
 
+import android.content.ActivityNotFoundException
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.text.Html
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
@@ -29,11 +32,25 @@ class MainActivity : AppCompatActivity() {
                 shareApp()
                 true
             }
+            R.id.menu_rate_app -> {
+                openStoreListing()
+                true
+            }
             R.id.menu_oss_licenses -> {
                 startActivity(Intent(this, OssLicensesMenuActivity::class.java))
                 true
             }
             else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    private fun openStoreListing() {
+        var intent = Intent(Intent.ACTION_VIEW)
+        intent.data = Uri.parse("market://details?id=xyz.mustafaali.devqstiles")
+        try {
+            startActivity(intent)
+        } catch(e: ActivityNotFoundException) {
+            Log.e("asdf", "Couldn't launch activity, maybe PlayStore is not installed")
         }
     }
 

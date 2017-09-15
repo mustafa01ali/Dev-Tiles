@@ -7,6 +7,10 @@
         android:title="@string/menu_share_app"
         app:showAsAction="always" />
     <item
+        android:id="@+id/menu_rate_app"
+        android:title="@string/menu_rate_app"
+        app:showAsAction="never" />
+    <item
         android:id="@+id/menu_oss_licenses"
         android:title="@string/menu_licenses"
         app:showAsAction="never" />
