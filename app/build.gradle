@@ -3,7 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 25
+    compileSdkVersion 26
     buildToolsVersion "25.0.3"
     defaultConfig {
         applicationId "xyz.mustafaali.devqstiles"
@@ -42,4 +42,5 @@ dependencies {
 }
 repositories {
     mavenCentral()
+    google()
 }

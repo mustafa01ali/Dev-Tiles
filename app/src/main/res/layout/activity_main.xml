@@ -27,6 +27,7 @@
             android:layout_marginTop="@dimen/activity_vertical_margin"
             android:fontFamily="monospace"
             android:text="@string/permission_command"
+            android:textIsSelectable="true"
             android:textStyle="bold" />
 
         <Button
