@@ -1,5 +1,6 @@
 package xyz.mustafaali.devqstiles.service
 
+import android.annotation.SuppressLint
 import android.graphics.drawable.Icon
 import android.service.quicksettings.TileService
 import android.support.v7.app.AlertDialog
@@ -15,7 +16,7 @@ import xyz.mustafaali.devqstiles.util.AnimatorDurationScaler.getIcon
  */
 class ToggleAnimatorDurationService : TileService() {
 
-    val choices = arrayOf(
+    private val choices = arrayOf(
             "Animation off",
             "Animation scale .5x",
             "Animation scale 1x",
@@ -25,7 +26,7 @@ class ToggleAnimatorDurationService : TileService() {
             "Animation scale 10x"
     )
 
-    val scales = listOf(
+    private val scales = listOf(
             0f,
             0.5f,
             1f,
@@ -44,6 +45,7 @@ class ToggleAnimatorDurationService : TileService() {
         showDialog(getDialog(scales.indexOf(current)))
     }
 
+    @SuppressLint("RestrictedApi")
     private fun getDialog(selectedIndex: Int): AlertDialog {
         val builder = AlertDialog.Builder(ContextThemeWrapper(this, R.style.AppTheme_Dialog))
         builder.setTitle(R.string.dialog_animator_duration_title)

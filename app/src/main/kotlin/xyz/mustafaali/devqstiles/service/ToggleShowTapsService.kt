@@ -1,10 +1,9 @@
 package xyz.mustafaali.devqstiles.service
 
 import android.provider.Settings
-import android.util.Log
+import timber.log.Timber
 
 class ToggleShowTapsService : BaseTileService() {
-    private val TAG = this.javaClass.simpleName
     private val SHOW_TOUCHES = "show_touches"
 
     override fun onClick() {
@@ -14,7 +13,7 @@ class ToggleShowTapsService : BaseTileService() {
             Settings.System.putInt(contentResolver, SHOW_TOUCHES, newValue)
         } catch (e: Exception) {
             showPermissionError()
-            Log.e(TAG, e.message)
+            Timber.e(e, e.message)
         }
 
         updateTile()
@@ -24,7 +23,7 @@ class ToggleShowTapsService : BaseTileService() {
         return try {
             Settings.System.getInt(contentResolver, SHOW_TOUCHES) == 1
         } catch (e: Settings.SettingNotFoundException) {
-            e.printStackTrace()
+            Timber.e(e, e.message)
             false
         }
     }

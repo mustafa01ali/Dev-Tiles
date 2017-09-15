@@ -1,14 +1,12 @@
 package xyz.mustafaali.devqstiles.service
 
 import android.provider.Settings
-import android.util.Log
+import timber.log.Timber
 
 /**
  * Tile Service to toggle USB Debugging.
  */
 class ToggleUsbDebuggingService : BaseTileService() {
-
-    val TAG = javaClass.simpleName
 
     override fun onStartListening() {
         super.onStartListening()
@@ -21,7 +19,7 @@ class ToggleUsbDebuggingService : BaseTileService() {
         try {
             Settings.Global.putString(contentResolver, Settings.Global.ADB_ENABLED, newValue)
         } catch (se: SecurityException) {
-            Log.e(TAG, se.message)
+            Timber.e(se, se.message)
             showPermissionError()
         }
         updateTile()

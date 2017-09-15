@@ -6,11 +6,11 @@ import android.net.Uri
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.text.Html
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import timber.log.Timber
 
 
 class MainActivity : AppCompatActivity() {
@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
         try {
             startActivity(intent)
         } catch(e: ActivityNotFoundException) {
-            Log.e("asdf", "Couldn't launch activity, maybe PlayStore is not installed")
+            Timber.e("Couldn't launch activity, maybe PlayStore is not installed")
         }
     }
 
