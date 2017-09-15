@@ -45,4 +45,5 @@
 
     <string name="menu_share_app">Share App</string>
     <string name="msg_share_app">Check out Dev Tiles on Google Play – https://play.google.com/store/apps/details?id=xyz.mustafaali.devqstiles</string>
+    <string name="menu_licenses">Licenses</string>
 </resources>

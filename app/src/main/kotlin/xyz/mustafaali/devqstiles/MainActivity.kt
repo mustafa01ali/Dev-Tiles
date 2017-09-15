@@ -6,7 +6,9 @@ import android.support.v7.app.AppCompatActivity
 import android.text.Html
 import android.view.Menu
 import android.view.MenuItem
+import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 import kotlinx.android.synthetic.main.activity_main.*
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,12 +24,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
+        return when (item.itemId) {
             R.id.menu_share_app -> {
                 shareApp()
-                return true
+                true
             }
-            else -> return super.onOptionsItemSelected(item)
+            R.id.menu_oss_licenses -> {
+                startActivity(Intent(this, OssLicensesMenuActivity::class.java))
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 

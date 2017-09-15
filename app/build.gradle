@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.google.gms.oss.licenses.plugin'
 
 android {
     compileSdkVersion 26
@@ -37,6 +38,7 @@ dependencies {
 
     compile "com.android.support:appcompat-v7:$support_lib_version"
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    compile 'com.google.android.gms:play-services-oss-licenses:11.2.2'
 
     testCompile 'junit:junit:4.12'
 }
