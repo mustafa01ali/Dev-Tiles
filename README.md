@@ -2,7 +2,7 @@
 
 Android Quick Settings tiles for developers. Works on Android 7.0+.
 
-[![CircleCI](https://circleci.com/gh/mustafa01ali/Dev-Tiles/tree/circle-ci-setup.svg?style=svg)](https://circleci.com/gh/mustafa01ali/Dev-Tiles/tree/circle-ci-setup)
+[![CircleCI](https://circleci.com/gh/mustafa01ali/Dev-Tiles.svg?style=svg)](https://circleci.com/gh/mustafa01ali/Dev-Tiles)
 
 ## Usage
 1. Install the app
