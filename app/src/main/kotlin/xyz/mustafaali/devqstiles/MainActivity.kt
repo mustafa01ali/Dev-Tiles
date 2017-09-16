@@ -5,12 +5,14 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.text.Html
+import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
 import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import timber.log.Timber
+import xyz.mustafaali.devqstiles.model.Feature
+import xyz.mustafaali.devqstiles.ui.FeaturesAdapter
 
 
 class MainActivity : AppCompatActivity() {
@@ -68,7 +70,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun initUi() {
         copyButton.setOnClickListener({ sharePermissionsCommand() })
-        featuresDescriptionTextView.text = Html.fromHtml(getString(R.string.features_description), Html.FROM_HTML_MODE_COMPACT)
+        featuresRecyclerView.layoutManager = LinearLayoutManager(this)
+        featuresRecyclerView.setHasFixedSize(true)
+        featuresRecyclerView.adapter = FeaturesAdapter(getFeaturesList()) {}
     }
 
     private fun shareApp() {
@@ -85,5 +89,15 @@ class MainActivity : AppCompatActivity() {
         sendIntent.putExtra(Intent.EXTRA_TEXT, getString(resId))
         sendIntent.type = "text/plain"
         startActivity(sendIntent)
+    }
+
+    private fun getFeaturesList(): List<Feature> {
+        return listOf(
+                Feature("Toggle USB Debugging", "Enable/disable USB debugging from your notification drawer", R.drawable.ic_toggle_usb_debugging),
+                Feature("Keep Screen On", "Keep screen on when connected via USB, but turn it off when connected to a charger", R.drawable.ic_toggle_keep_screen_on),
+                Feature("Show Touches", "Show touch points when you touch the screen, ideal for demos", R.drawable.ic_toggle_show_taps),
+                Feature("Demo Mode", "Cleans up the status bar for those perfect screenshots", R.drawable.ic_toggle_demo_mode),
+                Feature("Change Animator Duration", "Change the default animator duration to easily debug animations", R.drawable.ic_animator_duration)
+        )
     }
 }
