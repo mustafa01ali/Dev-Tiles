@@ -30,6 +30,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
+            R.id.menu_help -> {
+                openHelpVideo()
+                true
+            }
             R.id.menu_share_app -> {
                 shareApp()
                 true
@@ -58,6 +62,10 @@ class MainActivity : AppCompatActivity() {
         } catch(e: ActivityNotFoundException) {
             Timber.e("Couldn't launch activity, maybe PlayStore is not installed")
         }
+    }
+
+    private fun openHelpVideo() {
+        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=tdSAobQq1nQ")))
     }
 
     private fun openEmailClient() {
