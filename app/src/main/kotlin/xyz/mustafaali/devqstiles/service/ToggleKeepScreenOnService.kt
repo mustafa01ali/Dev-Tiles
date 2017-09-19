@@ -2,7 +2,7 @@ package xyz.mustafaali.devqstiles.service
 
 import android.os.BatteryManager
 import android.provider.Settings
-import android.util.Log
+import timber.log.Timber
 
 /**
  * Tile Service to keep the screen on when the device is connected to a USB port on a computer.
@@ -10,8 +10,6 @@ import android.util.Log
  * If the device is connected to a wall charger, the screen will turn off.
  */
 class ToggleKeepScreenOnService : BaseTileService() {
-    val TAG = javaClass.simpleName
-
     override fun onClick() {
         val newValue = if (isFeatureEnabled()) 0 else BatteryManager.BATTERY_PLUGGED_USB
 
@@ -27,7 +25,7 @@ class ToggleKeepScreenOnService : BaseTileService() {
         try {
             return Settings.Global.getInt(contentResolver, Settings.Global.STAY_ON_WHILE_PLUGGED_IN) == BatteryManager.BATTERY_PLUGGED_USB
         } catch (e: Settings.SettingNotFoundException) {
-            Log.e(TAG, e.message)
+            Timber.e(e, e.message)
         }
         return false
     }

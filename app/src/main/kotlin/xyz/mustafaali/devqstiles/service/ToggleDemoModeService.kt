@@ -9,10 +9,10 @@ import android.provider.Settings
  */
 class ToggleDemoModeService : BaseTileService() {
 
-    val DEMO_MODE_ALLOWED = "sysui_demo_allowed"
-    val DEMO_MODE_ON = "sysui_tuner_demo_on"
+    private val DEMO_MODE_ALLOWED = "sysui_demo_allowed"
+    private val DEMO_MODE_ON = "sysui_tuner_demo_on"
 
-    val STATUS_ICONS = listOf(
+    private val STATUS_ICONS = listOf(
             "volume",
             "bluetooth",
             "location",

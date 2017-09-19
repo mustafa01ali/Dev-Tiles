@@ -5,17 +5,14 @@ import android.content.Context
 import android.provider.Settings
 import android.support.annotation.DrawableRes
 import android.support.annotation.FloatRange
-import android.util.Log
 import android.widget.Toast
-
+import timber.log.Timber
 import xyz.mustafaali.devqstiles.R
 
 /**
  * A helper class for working with the system animator duration scale.
  */
 object AnimatorDurationScaler {
-
-    private val TAG = "AnimatorDurationScaler"
 
     @DrawableRes
     fun getIcon(scale: Float): Int {
@@ -43,7 +40,7 @@ object AnimatorDurationScaler {
             scale = Settings.Global.getFloat(contentResolver,
                     Settings.Global.ANIMATOR_DURATION_SCALE)
         } catch (e: Settings.SettingNotFoundException) {
-            Log.e(TAG, "Could not read Animator Duration Scale setting", e)
+            Timber.e(e, "Could not read Animator Duration Scale setting")
         }
 
         return scale
@@ -52,15 +49,15 @@ object AnimatorDurationScaler {
     fun setAnimatorScale(
             context: Context,
             @FloatRange(from = 0.0, to = 10.0) scale: Float): Boolean {
-        try {
+        return try {
             Settings.Global.putFloat(
                     context.contentResolver, Settings.Global.ANIMATOR_DURATION_SCALE, scale)
-            return true
+            true
         } catch (se: SecurityException) {
             val message = context.getString(R.string.permission_required_toast)
             Toast.makeText(context.applicationContext, message, Toast.LENGTH_LONG).show()
-            Log.d(TAG, message)
-            return false
+            Timber.e(se, message)
+            false
         }
 
     }

@@ -2,8 +2,24 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
+        android:id="@+id/menu_help"
+        android:icon="@drawable/ic_help_outline"
+        android:title="Help"
+        app:showAsAction="always" />
+    <item
         android:id="@+id/menu_share_app"
         android:icon="@drawable/ic_share"
-        android:title="@string/menu_share_app"
-        app:showAsAction="always" />
+        android:title="@string/menu_share_app" />
+    <item
+        android:id="@+id/menu_rate_app"
+        android:title="@string/menu_rate_app"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_request_feature"
+        android:title="@string/menu_request_feature"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_oss_licenses"
+        android:title="@string/menu_licenses"
+        app:showAsAction="never" />
 </menu>

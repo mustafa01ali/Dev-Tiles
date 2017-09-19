@@ -1,0 +1,17 @@
+0:46 appcompat-v7
+47:46 recyclerview-v7
+94:46 kotlin-stdlib-jre7
+141:46 timber
+188:46 animated-vector-drawable
+235:46 support-vector-drawable
+282:46 support-v4
+329:46 support-fragment
+376:46 support-core-ui
+423:46 support-media-compat
+470:46 support-core-utils
+517:46 support-compat
+564:46 support-annotations
+611:46 kotlin-stdlib
+658:46 runtime
+705:46 annotations
+799:46 common

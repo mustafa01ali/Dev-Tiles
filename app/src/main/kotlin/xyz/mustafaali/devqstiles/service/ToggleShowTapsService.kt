@@ -1,34 +1,30 @@
 package xyz.mustafaali.devqstiles.service
 
 import android.provider.Settings
-import android.util.Log
-import android.widget.Toast
-
-import xyz.mustafaali.devqstiles.R
+import timber.log.Timber
 
 class ToggleShowTapsService : BaseTileService() {
-    val TAG = this.javaClass.simpleName
-    val SHOW_TOUCHES = "show_touches"
+    private val SHOW_TOUCHES = "show_touches"
 
     override fun onClick() {
         val newValue = if (isFeatureEnabled()) 0 else 1
 
         try {
             Settings.System.putInt(contentResolver, SHOW_TOUCHES, newValue)
-        } catch (se: SecurityException) {
+        } catch (e: Exception) {
             showPermissionError()
-            Log.e(TAG, se.message)
+            Timber.e(e, e.message)
         }
 
         updateTile()
     }
 
     override fun isFeatureEnabled(): Boolean {
-        try {
-            return Settings.System.getInt(contentResolver, SHOW_TOUCHES) == 1
+        return try {
+            Settings.System.getInt(contentResolver, SHOW_TOUCHES) == 1
         } catch (e: Settings.SettingNotFoundException) {
-            e.printStackTrace()
-            return false
+            Timber.e(e, e.message)
+            false
         }
     }
 }

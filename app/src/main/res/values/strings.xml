@@ -28,21 +28,9 @@
 
     <string name="features_title">Available Tiles</string>
 
-    <string name="features_description">
-        <![CDATA[
-        <b>Toggle USB Debugging</b> <br />
-        Enable/disable USB debugging right from your notification drawer <br /><br />
-        <b>Toggle Keep Screen On</b> <br />
-        Keep screen on when connected via USB, but turn it off if connected to a wall charger  <br /><br />
-        <b>Show touches</b> <br />
-        Because others can\'t see where you are tapping during demos <br /><br />
-        <b>Toggle Demo Mode</b> <br />
-        No more status bar clutter during demos or in screenshots <br /><br />
-        <b>Toggle Animator Duration</b> <br />
-        Easily debug your fancy animations
-        ]]>
-    </string>
-
-    <string name="menu_share_app">Share App</string>
+    <string name="menu_share_app">Share</string>
     <string name="msg_share_app">Check out Dev Tiles on Google Play – https://play.google.com/store/apps/details?id=xyz.mustafaali.devqstiles</string>
+    <string name="menu_licenses">Licenses</string>
+    <string name="menu_rate_app">Rate</string>
+    <string name="menu_request_feature">Request feature</string>
 </resources>
