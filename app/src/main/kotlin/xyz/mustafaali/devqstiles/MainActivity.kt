@@ -105,7 +105,8 @@ class MainActivity : AppCompatActivity() {
                 Feature("Keep Screen On", "Keep screen on when connected via USB, but turn it off when connected to a charger", R.drawable.ic_toggle_keep_screen_on),
                 Feature("Show Touches", "Show touch points when you touch the screen, ideal for demos", R.drawable.ic_toggle_show_taps),
                 Feature("Demo Mode", "Cleans up the status bar for those perfect screenshots", R.drawable.ic_toggle_demo_mode),
-                Feature("Change Animator Duration", "Change the default animator duration to easily debug animations", R.drawable.ic_animator_duration)
+                Feature("Change Animator Duration", "Change the default animator duration to easily debug animations", R.drawable.ic_animator_duration),
+                Feature("Toggle Animation Scale", "Toggle window animation scale, transition animation scale, and animator duration scale", R.drawable.ic_animation)
         )
     }
 }

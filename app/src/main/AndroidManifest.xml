@@ -85,6 +85,18 @@
             </intent-filter>
         </service>
 
+        <service
+            android:name="xyz.mustafaali.devqstiles.service.ToggleAnimationService"
+            android:enabled="true"
+            android:exported="true"
+            android:icon="@drawable/ic_animation"
+            android:label="@string/label_toggle_animation_scale"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
+
         <!-- To take advantage of larger aspect ratio on devices like the S8 -->
         <!-- https://android-developers.googleblog.com/2017/03/update-your-app-to-take-advantage-of.html -->
         <meta-data
