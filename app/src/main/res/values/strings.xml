@@ -7,7 +7,7 @@
     <string name="label_toggle_show_touches">Show taps</string>
     <string name="label_toggle_demo_mode">Demo mode</string>
     <string name="label_toggle_animator_duration_scale">Toggle animator duration scale</string>
-    <string name="label_toggle_animation_scale">Toggle animation scale</string>
+    <string name="label_toggle_all_animations">Toggle all animations</string>
 
     <string name="animation_off">Animation off</string>
     <string name="animation_scale_0_5x">Animation scale .5x</string>

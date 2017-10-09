@@ -106,7 +106,7 @@ class MainActivity : AppCompatActivity() {
                 Feature("Show Touches", "Show touch points when you touch the screen, ideal for demos", R.drawable.ic_toggle_show_taps),
                 Feature("Demo Mode", "Cleans up the status bar for those perfect screenshots", R.drawable.ic_toggle_demo_mode),
                 Feature("Change Animator Duration", "Change the default animator duration to easily debug animations", R.drawable.ic_animator_duration),
-                Feature("Toggle Animation Scale", "Toggle window animation scale, transition animation scale, and animator duration scale", R.drawable.ic_animation)
+                Feature("Toggle Animation Scale", "Enable/disable all animations with one click, perfect for running Espresso tests", R.drawable.ic_animation)
         )
     }
 }
