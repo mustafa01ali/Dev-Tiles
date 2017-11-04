@@ -14,7 +14,7 @@ import timber.log.Timber
 import xyz.mustafaali.devqstiles.model.Feature
 import xyz.mustafaali.devqstiles.ui.FeaturesAdapter
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
