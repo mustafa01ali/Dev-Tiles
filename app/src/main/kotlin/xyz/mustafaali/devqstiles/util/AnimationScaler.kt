@@ -37,10 +37,9 @@ object AnimationScaler {
             Timber.e(se, message)
             false
         }
-
     }
 
-    fun  getAnimationScale(contentResolver: ContentResolver?): Float {
+    fun getAnimationScale(contentResolver: ContentResolver?): Float {
         var scale = 1f
         try {
             scale = maxOf(
@@ -56,5 +55,4 @@ object AnimationScaler {
 
         return if (scale >= 1) 1.0f else 0.0f
     }
-
 }

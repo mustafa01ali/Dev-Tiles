@@ -25,5 +25,4 @@ class ToggleAnimationService : TileService() {
         tile.icon = Icon.createWithResource(applicationContext, AnimationScaler.getIcon(scale))
         tile.updateTile()
     }
-
 }

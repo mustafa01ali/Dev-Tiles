@@ -59,6 +59,5 @@ object AnimatorDurationScaler {
             Timber.e(se, message)
             false
         }
-
     }
 }
