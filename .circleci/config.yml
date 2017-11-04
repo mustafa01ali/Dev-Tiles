@@ -18,6 +18,9 @@ jobs:
             - ~/.gradle
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
       - run:
+          name: Check code style
+          command: ./gradlew ktlint
+      - run:
           name: Compile & Run Tests
           command: ./gradlew assemble test
       - store_artifacts:
