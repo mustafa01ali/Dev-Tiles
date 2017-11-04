@@ -23,5 +23,4 @@ class FeaturesAdapter(val features: List<Feature>, val listener: (Feature) -> Un
     override fun onBindViewHolder(holder: ViewHolder, position: Int) = holder.bind(features[position], listener)
 
     override fun getItemCount(): Int = features.size
-
 }

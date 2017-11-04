@@ -1,4 +1,4 @@
-package xyz.mustafaali.devqstiles;
+package xyz.mustafaali.devqstiles
 
 import android.content.ActivityNotFoundException
 import android.content.Intent
@@ -13,7 +13,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 import timber.log.Timber
 import xyz.mustafaali.devqstiles.model.Feature
 import xyz.mustafaali.devqstiles.ui.FeaturesAdapter
-
 
 class MainActivity : AppCompatActivity() {
 
@@ -59,7 +58,7 @@ class MainActivity : AppCompatActivity() {
         intent.data = Uri.parse("market://details?id=xyz.mustafaali.devqstiles")
         try {
             startActivity(intent)
-        } catch(e: ActivityNotFoundException) {
+        } catch (e: ActivityNotFoundException) {
             Timber.e("Couldn't launch activity, maybe PlayStore is not installed")
         }
     }
@@ -105,7 +104,8 @@ class MainActivity : AppCompatActivity() {
                 Feature("Keep Screen On", "Keep screen on when connected via USB, but turn it off when connected to a charger", R.drawable.ic_toggle_keep_screen_on),
                 Feature("Show Touches", "Show touch points when you touch the screen, ideal for demos", R.drawable.ic_toggle_show_taps),
                 Feature("Demo Mode", "Cleans up the status bar for those perfect screenshots", R.drawable.ic_toggle_demo_mode),
-                Feature("Change Animator Duration", "Change the default animator duration to easily debug animations", R.drawable.ic_animator_duration)
+                Feature("Change Animator Duration", "Change the default animator duration to easily debug animations", R.drawable.ic_animator_duration),
+                Feature("Toggle Animation Scale", "Enable/disable all animations with one click, perfect for running Espresso tests", R.drawable.ic_animation)
         )
     }
 }
