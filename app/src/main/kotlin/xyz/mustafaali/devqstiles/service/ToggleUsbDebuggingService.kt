@@ -28,5 +28,4 @@ class ToggleUsbDebuggingService : BaseTileService() {
     override fun isFeatureEnabled(): Boolean {
         return Settings.Global.getString(contentResolver, Settings.Global.ADB_ENABLED) == "1"
     }
-
 }

@@ -1,4 +1,4 @@
-package xyz.mustafaali.devqstiles;
+package xyz.mustafaali.devqstiles
 
 import android.content.ActivityNotFoundException
 import android.content.Intent
@@ -13,7 +13,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 import timber.log.Timber
 import xyz.mustafaali.devqstiles.model.Feature
 import xyz.mustafaali.devqstiles.ui.FeaturesAdapter
-
 
 class MainActivity : AppCompatActivity() {
 
@@ -59,7 +58,7 @@ class MainActivity : AppCompatActivity() {
         intent.data = Uri.parse("market://details?id=xyz.mustafaali.devqstiles")
         try {
             startActivity(intent)
-        } catch(e: ActivityNotFoundException) {
+        } catch (e: ActivityNotFoundException) {
             Timber.e("Couldn't launch activity, maybe PlayStore is not installed")
         }
     }
