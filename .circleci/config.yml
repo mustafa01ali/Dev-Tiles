@@ -6,6 +6,9 @@ jobs:
       - image: circleci/android:api-26-alpha
     environment:
       JVM_OPTS: -Xmx3200m
+    general:
+      artifacts:
+        - "app/build/analysis"
     steps:
       - checkout
       - restore_cache:
