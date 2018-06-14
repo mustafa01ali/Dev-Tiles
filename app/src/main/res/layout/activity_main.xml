@@ -30,13 +30,28 @@
             android:textIsSelectable="true"
             android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/copyButton"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:gravity="center"
             android:layout_marginTop="@dimen/activity_vertical_margin"
-            android:text="@string/btn_label_share" />
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/setPermissionsButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/spacing_normal"
+                android:visibility="gone"
+                android:text="@string/btn_label_set_permissions" />
+
+            <Button
+                android:id="@+id/copyButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_label_share" />
+
+        </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
@@ -48,7 +63,8 @@
         <android.support.v7.widget.RecyclerView
             android:id="@+id/featuresRecyclerView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/feature_item_layout" />
 
     </LinearLayout>
 </ScrollView>

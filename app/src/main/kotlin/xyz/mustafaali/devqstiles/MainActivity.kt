@@ -8,11 +8,14 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
+import com.jrummyapps.android.shell.Shell
 import kotlinx.android.synthetic.main.activity_main.*
 import timber.log.Timber
 import xyz.mustafaali.devqstiles.model.Feature
 import xyz.mustafaali.devqstiles.ui.FeaturesAdapter
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -76,10 +79,21 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initUi() {
-        copyButton.setOnClickListener({ sharePermissionsCommand() })
+        if (Shell.SU.available())
+            setPermissionsButton.visibility = View.VISIBLE
+        else
+            setPermissionsButton.visibility = View.GONE
+
+        copyButton.setOnClickListener({ setPermissions() })
         featuresRecyclerView.layoutManager = LinearLayoutManager(this)
         featuresRecyclerView.setHasFixedSize(true)
         featuresRecyclerView.adapter = FeaturesAdapter(getFeaturesList()) {}
+    }
+
+    private fun setPermissions() {
+        Timber.d("SU available: " + Shell.SU.available())
+        val result = Shell.SU.run("adb shell pm grant xyz.mustafaali.devqstiles android.permission.WRITE_SECURE_SETTINGS")
+        Timber.d("Result: " + result.isSuccessful)
     }
 
     private fun shareApp() {

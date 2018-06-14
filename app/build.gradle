@@ -45,6 +45,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     implementation 'com.google.android.gms:play-services-oss-licenses:11.4.2'
     implementation 'com.jakewharton.timber:timber:4.5.1'
+    implementation 'com.jrummyapps:android-shell:1.0.0'
 
     testImplementation 'junit:junit:4.12'
 

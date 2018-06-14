@@ -25,6 +25,7 @@
     <!-- Home screen -->
     <string name="grant_permission">Grant Permissions</string>
     <string name="permission_command">adb shell pm grant xyz.mustafaali.devqstiles android.permission.WRITE_SECURE_SETTINGS\n\nadb shell pm grant xyz.mustafaali.devqstiles android.permission.DUMP</string>
+    <string name="btn_label_set_permissions">Set Permissions</string>
     <string name="btn_label_share">Share</string>
 
     <string name="features_title">Available Tiles</string>
