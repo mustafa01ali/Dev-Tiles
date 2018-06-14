@@ -9,6 +9,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 import com.jrummyapps.android.shell.Shell
 import kotlinx.android.synthetic.main.activity_main.*
@@ -84,7 +85,8 @@ class MainActivity : AppCompatActivity() {
         else
             setPermissionsButton.visibility = View.GONE
 
-        copyButton.setOnClickListener({ setPermissions() })
+        setPermissionsButton.setOnClickListener { setPermissions() }
+        copyButton.setOnClickListener({ sharePermissionsCommand() })
         featuresRecyclerView.layoutManager = LinearLayoutManager(this)
         featuresRecyclerView.setHasFixedSize(true)
         featuresRecyclerView.adapter = FeaturesAdapter(getFeaturesList()) {}
@@ -92,8 +94,16 @@ class MainActivity : AppCompatActivity() {
 
     private fun setPermissions() {
         Timber.d("SU available: " + Shell.SU.available())
-        val result = Shell.SU.run("adb shell pm grant xyz.mustafaali.devqstiles android.permission.WRITE_SECURE_SETTINGS")
-        Timber.d("Result: " + result.isSuccessful)
+        val result1 = Shell.SU.run("pm grant xyz.mustafaali.devqstiles android.permission.WRITE_SECURE_SETTINGS")
+        Timber.d("Result1: " + result1.isSuccessful)
+        val result2 = Shell.SU.run("pm grant xyz.mustafaali.devqstiles android.permission.DUMP")
+        Timber.d("Result2: " + result2.isSuccessful)
+
+        if (result1.isSuccessful && result2.isSuccessful) {
+            Toast.makeText(this, "Success!", Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(this, "Failed!", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun shareApp() {
