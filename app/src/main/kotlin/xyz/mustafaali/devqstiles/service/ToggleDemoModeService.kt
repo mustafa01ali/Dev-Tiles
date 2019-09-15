@@ -3,7 +3,7 @@ package xyz.mustafaali.devqstiles.service
 import android.content.Intent
 import android.os.Build
 import android.provider.Settings
-import java.util.*
+import java.util.Locale
 
 /**
  * Tile service to toggle demo mode
