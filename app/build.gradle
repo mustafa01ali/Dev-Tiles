@@ -18,7 +18,7 @@ android {
 
         // Writing show taps setting fails on higher versions
         //noinspection OldTargetApi
-        targetSdkVersion 22
+        targetSdkVersion 26
 
         versionCode 7
         versionName "1.1.0"

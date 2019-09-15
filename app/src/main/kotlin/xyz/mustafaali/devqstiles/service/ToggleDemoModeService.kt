@@ -3,6 +3,7 @@ package xyz.mustafaali.devqstiles.service
 import android.content.Intent
 import android.os.Build
 import android.provider.Settings
+import java.util.*
 
 /**
  * Tile service to toggle demo mode
@@ -103,7 +104,13 @@ class ToggleDemoModeService : BaseTileService() {
     }
 
     private fun getDeviceVersionForDemoClock(): String {
-        return String.format("0%s00", Build.VERSION.RELEASE.substring(0, 1))
+        val releaseVersion = Build.VERSION.RELEASE.substring(0,
+                if (Build.VERSION.RELEASE.contains("."))
+                    Build.VERSION.RELEASE.indexOf(".")
+                else
+                    Build.VERSION.RELEASE.length)
+
+        return String.format(Locale.US, "%02d00", releaseVersion.toInt())
     }
 
     private fun stopDemoMode() {
